@@ -91,7 +91,8 @@
 <p>首先需要搭建gitbash和nodejs环境。（在官网下载即可）,同时git操作不熟悉参照以下两个教程：<br><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">Git教程</a><br><a href="http://www.worldhello.net/gotgithub/index.html" target="_blank" rel="external">GitHub教程</a><br>在任意地方右键打开gitbash,通过npm安装hexo;<br>     输入命令：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm  install  -g  hexo</span><br></pre></td></tr></table></figure></p>
 <p>自己找到一个地方新建一个文件夹，文件夹名称任意（这里使用“hexo”来命名），打开文件夹右键打开gitbash,执行以下命令，hexo会在该文件夹中生成网站所需要的文件。<br>     输入命令：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure></p>
 <p>安装完之后可以发现文件夹下面生成了很多文件夹，安装依赖包。<br>     输入命令：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm  install</span><br></pre></td></tr></table></figure></p>
-<p>环境搭建完成，查看网站，可以通过下面命令生成静态页面在本地启动：<br>     输入命令：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo  g&#10;hexo  s</span><br></pre></td></tr></table></figure></p>
+<p>环境搭建完成，查看网站，可以通过下面命令生成静态页面在本地启动：<br>     输入命令：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo  g</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo  s</span><br></pre></td></tr></table></figure>
 <p>在本地浏览器中输入地址：localhost:4000就可以看到hexo的页面。</p>
 <h3 id="步骤二：将hexo部署到github上">步骤二：将hexo部署到github上</h3><hr>
 <p>搭建一个git服务器，注册一个GitHub帐号，就可以免费获得Git远程仓库。<br>由于你的本地Git仓库和GitHub仓库之间的传输是用过SSH加密的，需要设置；<br>(1)创建SSH Key。在你的C盘下面找到.ssh目录，再在这个目录下面找到id_rsa和id_rsa.pub这两个文件，如果已经有了，可直接跳到下一步。如果没有，打开Shell（Windows下打开Git Bash）,创建SSH Key:<br> 输入命令：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C &#34;youremail@example.com&#34;</span><br></pre></td></tr></table></figure></p>
@@ -115,97 +116,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/07/09/github上使用hexo创建个人blog/" data-id="cibvyuuwe00005cf8j28vyz47" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/07/09/github上使用hexo创建个人blog/" data-id="cibvzca510000rgf81a6p31d2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他技术/">其他技术</a></li></ul>
 
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/07/09/test/" class="article-date">
-  <time datetime="2015-07-09T01:25:06.655Z" itemprop="datePublished">2015-07-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/09/test/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="hello_hexo">hello hexo</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="number">2</span>);</span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">"hello"</span>);</span><br></pre></td></tr></table></figure>
-<h2 id="hello">hello</h2><ul>
-<li>hello1</li>
-<li>hello2</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/07/09/test/" data-id="cibvyuux300055cf8tpr978t9" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/07/09/hello-world/" class="article-date">
-  <time datetime="2015-07-09T01:10:38.365Z" itemprop="datePublished">2015-07-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/09/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/07/09/hello-world/" data-id="cibvyuux600065cf8cxfe6bf0" class="article-share-link">Share</a>
-      
-      
     </footer>
   </div>
   
@@ -249,7 +164,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -262,14 +177,6 @@
         
           <li>
             <a href="/2015/07/09/github上使用hexo创建个人blog/">如何在本地搭建hexo环境</a>
-          </li>
-        
-          <li>
-            <a href="/2015/07/09/test/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2015/07/09/hello-world/">Hello World</a>
           </li>
         
       </ul>
