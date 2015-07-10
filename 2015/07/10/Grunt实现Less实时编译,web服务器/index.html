@@ -3,21 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>如何将less转换为css | Hexo</title>
+  <title>Grunt实现Less实时编译,web服务器 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、安装grunt，（grunt的命令行接口）1npm install -g grunt-cli
-2、新建一个项目文件（这里命名为test），里面新建两个文件，分别为：package.json;   Gruntfile.js3、检查package.json里面是否都包含你 需要的包，以及Gruntfile.js里面对应的是否配置好；注释：package.json这个文件是用来存储npm模块的依赖项">
+  <meta name="description" content="less编辑器使用的好处Less是一门css预处理语言，它扩充了css语言，增加了诸如变量、混合（mixin）、函数等功能，让css更易维护、方便制作主题、扩充。
+准备工作1、安装grunt，（grunt的命令行接口）1npm install -g grunt-cli
+2、新建一个项目文件（这里命名为test），里面新建两个文件，分别为：package.json;   Gruntfile.js3、">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何将less转换为css">
-<meta property="og:url" content="http://yoursite.com/2015/07/09/如何将less转换为css/index.html">
+<meta property="og:title" content="Grunt实现Less实时编译,web服务器">
+<meta property="og:url" content="http://yoursite.com/2015/07/10/Grunt实现Less实时编译,web服务器/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1、安装grunt，（grunt的命令行接口）1npm install -g grunt-cli
-2、新建一个项目文件（这里命名为test），里面新建两个文件，分别为：package.json;   Gruntfile.js3、检查package.json里面是否都包含你 需要的包，以及Gruntfile.js里面对应的是否配置好；注释：package.json这个文件是用来存储npm模块的依赖项">
-<meta property="og:updated_time" content="2015-07-10T06:53:30.643Z">
+<meta property="og:description" content="less编辑器使用的好处Less是一门css预处理语言，它扩充了css语言，增加了诸如变量、混合（mixin）、函数等功能，让css更易维护、方便制作主题、扩充。
+准备工作1、安装grunt，（grunt的命令行接口）1npm install -g grunt-cli
+2、新建一个项目文件（这里命名为test），里面新建两个文件，分别为：package.json;   Gruntfile.js3、">
+<meta property="og:updated_time" content="2015-07-10T07:56:59.638Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何将less转换为css">
-<meta name="twitter:description" content="1、安装grunt，（grunt的命令行接口）1npm install -g grunt-cli
-2、新建一个项目文件（这里命名为test），里面新建两个文件，分别为：package.json;   Gruntfile.js3、检查package.json里面是否都包含你 需要的包，以及Gruntfile.js里面对应的是否配置好；注释：package.json这个文件是用来存储npm模块的依赖项">
+<meta name="twitter:title" content="Grunt实现Less实时编译,web服务器">
+<meta name="twitter:description" content="less编辑器使用的好处Less是一门css预处理语言，它扩充了css语言，增加了诸如变量、混合（mixin）、函数等功能，让css更易维护、方便制作主题、扩充。
+准备工作1、安装grunt，（grunt的命令行接口）1npm install -g grunt-cli
+2、新建一个项目文件（这里命名为test），里面新建两个文件，分别为：package.json;   Gruntfile.js3、">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -63,10 +66,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-如何将less转换为css" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Grunt实现Less实时编译,web服务器" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/07/09/如何将less转换为css/" class="article-date">
-  <time datetime="2015-07-09T09:03:22.000Z" itemprop="datePublished">2015-07-09</time>
+    <a href="/2015/07/10/Grunt实现Less实时编译,web服务器/" class="article-date">
+  <time datetime="2015-07-10T07:56:22.000Z" itemprop="datePublished">2015-07-10</time>
 </a>
     
   <div class="article-category">
@@ -81,7 +84,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      如何将less转换为css
+      Grunt实现Less实时编译,web服务器
     </h1>
   
 
@@ -89,18 +92,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="1、安装grunt，（grunt的命令行接口）">1、安装grunt，（grunt的命令行接口）</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g grunt-cli</span><br></pre></td></tr></table></figure>
+        <h4 id="less编辑器使用的好处">less编辑器使用的好处</h4><p>Less是一门css预处理语言，它扩充了css语言，增加了诸如变量、混合（mixin）、函数等功能，让css更易维护、方便制作主题、扩充。</p>
+<h4 id="准备工作">准备工作</h4><h5 id="1、安装grunt，（grunt的命令行接口）">1、安装grunt，（grunt的命令行接口）</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g grunt-cli</span><br></pre></td></tr></table></figure>
 <h5 id="2、新建一个项目文件（这里命名为test），里面新建两个文件，分别为：package-json;_Gruntfile-js">2、新建一个项目文件（这里命名为test），里面新建两个文件，分别为：package.json;   Gruntfile.js</h5><h5 id="3、检查package-json里面是否都包含你_需要的包，以及Gruntfile-js里面对应的是否配置好；">3、检查package.json里面是否都包含你 需要的包，以及Gruntfile.js里面对应的是否配置好；</h5><p>注释：package.json这个文件是用来存储npm模块的依赖项；Gruntfile这个文件是读取package里面的信息，以及插件的加载，注册任务，运行任务等。</p>
+<p>package.json中常用的插件有：grunt-contrib-connect、grunt-contrib-less、grunt-contrib-watch、grunt-contrib-copy、grunt-contrib-csscomb、grunt-contrib-clean.</p>
+<p>其中：1、grunt-contrib-connect用来充当一个静态文件服务器，本身集成了livereload功能。（livereload实现页面自动刷新，会监控你指定的目录中的文件，如果有文件被修改i啊，它就自动触发浏览器刷新页面。）；2、grunt-contrib-less 用来处理less文件；3、grunt-contrib-watch用来监控文件的变化。4、grunt-contrib-copy用来复制文件；5、grunt-contrib-csscomb用来进行css排序；6、grunt-contrib-clean用来清理文件。</p>
 <h5 id="4、执行cnpm_install命令安装项目依赖的库。">4、执行cnpm install命令安装项目依赖的库。</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install</span><br></pre></td></tr></table></figure>
 <p>此时多出一个文件夹node_modules,文件夹中都包含了你需要依赖的文件。</p>
-<h5 id="5、在文件夹中新建一个index-html,一个less文件夹，less文件夹里面新建一个common-less文件。">5、在文件夹中新建一个index.html,一个less文件夹，less文件夹里面新建一个common.less文件。</h5><p>html中编写相应的框架，less里面编写相应的样式。</p>
-<h5 id="6、执行grunt命令。">6、执行grunt命令。</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grunt</span><br></pre></td></tr></table></figure>
+<h4 id="Grunt实现Less实时编辑需要使用哪些插件来实现？">Grunt实现Less实时编辑需要使用哪些插件来实现？</h4><h5 id="主要使用：grunt-contrib-connect、grunt-contrib-less、grunt-contrib-watch这些插件来实现此功能。">主要使用：grunt-contrib-connect、grunt-contrib-less、grunt-contrib-watch这些插件来实现此功能。</h5><h5 id="1、操作以上4个步骤；">1、操作以上4个步骤；</h5><h5 id="2、在文件夹中新建一个index-html,一个less文件夹，less文件夹里面新建一个common-less文件。">2、在文件夹中新建一个index.html,一个less文件夹，less文件夹里面新建一个common.less文件。</h5><p>html中编写相应的框架，less里面编写相应的样式。</p>
+<h5 id="3、执行grunt命令。">3、执行grunt命令。</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grunt</span><br></pre></td></tr></table></figure>
 <p>自动将less转换为css文件，本地访问：<a href="http://localhost:9999/" target="_blank" rel="external">http://localhost:9999/</a>  ,每次只需要修改代码后，保存即可，界面自动刷新。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/07/09/如何将less转换为css/" data-id="cibx9p2x600081kf8vrye4x6i" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/07/10/Grunt实现Less实时编译,web服务器/" data-id="cibxbz38d0000swf8su97w8y8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他技术/">其他技术</a></li></ul>
@@ -111,19 +117,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/07/09/更换hexo主题/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          hexo 主题
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/07/09/github上使用hexo创建个人blog/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2015/07/09/更换hexo主题/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">如何在本地搭建hexo环境</div>
+      <div class="article-nav-title">hexo 主题</div>
     </a>
   
 </nav>
@@ -178,11 +175,11 @@
       <ul>
         
           <li>
-            <a href="/2015/07/09/更换hexo主题/">hexo 主题</a>
+            <a href="/2015/07/10/Grunt实现Less实时编译,web服务器/">Grunt实现Less实时编译,web服务器</a>
           </li>
         
           <li>
-            <a href="/2015/07/09/如何将less转换为css/">如何将less转换为css</a>
+            <a href="/2015/07/09/更换hexo主题/">hexo 主题</a>
           </li>
         
           <li>
