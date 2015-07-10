@@ -5,22 +5,19 @@
   
   <title>hexo 主题 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="hexo 主题
-如果不喜欢默认的主题，我们可以换个主题，首先可以到下面地址中去选择一个你喜欢的主题：hexo主题当我们选择了合适的主题之后，需要安装主题，方法就是一句git命令：1git clone https://github.com/heroicyang/hexo-theme-modernist.git themes/modernist
-地址对应的是相应的主题的github地址，git会将主题">
+  <meta name="description" content="1、安装grunt，（grunt的命令行接口）1npm install -g grunt-cli
+2、新建一个项目文件（这里命名为test），里面新建两个文件，分别为：package.json;   Gruntfile.js3、检查package.json里面是否都包含你 需要的包，以及Gruntfile.js里面对应的是否配置好；注释：package.json这个文件是用来存储npm模块的依赖项">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo 主题">
-<meta property="og:url" content="http://yoursite.com/2015/07/09/更换hexo主题/index.html">
+<meta property="og:url" content="http://yoursite.com/2015/07/09/如何将less转换为css/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="hexo 主题
-如果不喜欢默认的主题，我们可以换个主题，首先可以到下面地址中去选择一个你喜欢的主题：hexo主题当我们选择了合适的主题之后，需要安装主题，方法就是一句git命令：1git clone https://github.com/heroicyang/hexo-theme-modernist.git themes/modernist
-地址对应的是相应的主题的github地址，git会将主题">
-<meta property="og:updated_time" content="2015-07-09T09:56:07.891Z">
+<meta property="og:description" content="1、安装grunt，（grunt的命令行接口）1npm install -g grunt-cli
+2、新建一个项目文件（这里命名为test），里面新建两个文件，分别为：package.json;   Gruntfile.js3、检查package.json里面是否都包含你 需要的包，以及Gruntfile.js里面对应的是否配置好；注释：package.json这个文件是用来存储npm模块的依赖项">
+<meta property="og:updated_time" content="2015-07-10T06:49:56.890Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo 主题">
-<meta name="twitter:description" content="hexo 主题
-如果不喜欢默认的主题，我们可以换个主题，首先可以到下面地址中去选择一个你喜欢的主题：hexo主题当我们选择了合适的主题之后，需要安装主题，方法就是一句git命令：1git clone https://github.com/heroicyang/hexo-theme-modernist.git themes/modernist
-地址对应的是相应的主题的github地址，git会将主题">
+<meta name="twitter:description" content="1、安装grunt，（grunt的命令行接口）1npm install -g grunt-cli
+2、新建一个项目文件（这里命名为test），里面新建两个文件，分别为：package.json;   Gruntfile.js3、检查package.json里面是否都包含你 需要的包，以及Gruntfile.js里面对应的是否配置好；注释：package.json这个文件是用来存储npm模块的依赖项">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -66,9 +63,9 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-更换hexo主题" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-如何将less转换为css" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/07/09/更换hexo主题/" class="article-date">
+    <a href="/2015/07/09/如何将less转换为css/" class="article-date">
   <time datetime="2015-07-09T09:03:22.000Z" itemprop="datePublished">2015-07-09</time>
 </a>
     
@@ -92,15 +89,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="hexo_主题">hexo 主题</h3><hr>
-<p>如果不喜欢默认的主题，我们可以换个主题，首先可以到下面地址中去选择一个你喜欢的主题：<br><a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">hexo主题</a><br>当我们选择了合适的主题之后，需要安装主题，方法就是一句git命令：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/heroicyang/hexo-theme-modernist.git themes/modernist</span><br></pre></td></tr></table></figure></p>
-<p>地址对应的是相应的主题的github地址，git会将主题clone到theme文件夹下，需要对_config.yml文件进行修改，找到 theme配置将它修改成对应的主题名称：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme:modernist</span><br></pre></td></tr></table></figure></p>
-<p>在对应的主题目录下也有一个_config.yml配置文件，可以对应的修改主题的一些信息，例如插件、导航链接等。之后执行命令：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd themes/modernist&#10;git pull</span><br></pre></td></tr></table></figure></p>
+        <h5 id="1、安装grunt，（grunt的命令行接口）">1、安装grunt，（grunt的命令行接口）</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g grunt-cli</span><br></pre></td></tr></table></figure>
+<h5 id="2、新建一个项目文件（这里命名为test），里面新建两个文件，分别为：package-json;_Gruntfile-js">2、新建一个项目文件（这里命名为test），里面新建两个文件，分别为：package.json;   Gruntfile.js</h5><h5 id="3、检查package-json里面是否都包含你_需要的包，以及Gruntfile-js里面对应的是否配置好；">3、检查package.json里面是否都包含你 需要的包，以及Gruntfile.js里面对应的是否配置好；</h5><p>注释：package.json这个文件是用来存储npm模块的依赖项；Gruntfile这个文件是读取package里面的信息，以及插件的加载，注册任务，运行任务等。</p>
+<h5 id="4、执行cnpm_install命令安装项目依赖的库。">4、执行cnpm install命令安装项目依赖的库。</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install</span><br></pre></td></tr></table></figure>
+<p>此时多出一个文件夹node_modules,文件夹中都包含了你需要依赖的文件。</p>
+<h5 id="5、在文件夹中新建一个index-html,一个less文件夹，less文件夹里面新建一个common-less文件。">5、在文件夹中新建一个index.html,一个less文件夹，less文件夹里面新建一个common.less文件。</h5><p>html中编写相应的框架，less里面编写相应的样式。</p>
+<h5 id="6、执行grunt命令。">6、执行grunt命令。</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grunt</span><br></pre></td></tr></table></figure>
+<p>自动将less转换为css文件，本地访问：<a href="http://localhost:9999/" target="_blank" rel="external">http://localhost:9999/</a>  ,每次只需要修改代码后，保存即可，界面自动刷新。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/07/09/更换hexo主题/" data-id="cibx9ls9f0005t0f8ysjrcyq4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/07/09/如何将less转换为css/" data-id="cibx9ls9j0008t0f8xnsswcgf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他技术/">其他技术</a></li></ul>
@@ -111,10 +111,19 @@
     
 <nav id="article-nav">
   
+    <a href="/2015/07/09/更换hexo主题/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          hexo 主题
+        
+      </div>
+    </a>
   
-    <a href="/2015/07/09/如何将less转换为css/" id="article-nav-older" class="article-nav-link-wrap">
+  
+    <a href="/2015/07/09/github上使用hexo创建个人blog/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">hexo 主题</div>
+      <div class="article-nav-title">如何在本地搭建hexo环境</div>
     </a>
   
 </nav>
