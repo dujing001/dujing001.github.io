@@ -95,7 +95,53 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/08/10/移动端图片轮播实现/" data-id="cid6o5ltg0005vwf8urkqd37m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/08/10/移动端图片轮播实现/" data-id="cid746d5s0005p0f8mzqxv8l8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他技术/">其他技术</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-无缝滚动" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/08/10/无缝滚动/" class="article-date">
+  <time datetime="2015-08-10T10:03:22.000Z" itemprop="datePublished">2015-08-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/其他技术/">其他技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/10/无缝滚动/">无缝滚动</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="无缝滚动">无缝滚动</h3><hr>
+<h6 id="1、界面布局">1、界面布局</h6><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;div id=&#34;scroll&#34;&#62;&#10;        &#60;ul&#62;&#10;               &#60;li&#62;&#60;a href=&#34;#&#34;&#62;&#60;img src=&#34;images/1.jpg&#34; /&#62;&#60;/a&#62;&#60;/li&#62;&#10;               &#60;li&#62;&#60;a href=&#34;#&#34;&#62;&#60;img src=&#34;images/2.jpg&#34; /&#62;&#60;/a&#62;&#60;/li&#62;&#10;               &#60;li&#62;&#60;a href=&#34;#&#34;&#62;&#60;img src=&#34;images/3.jpg&#34; /&#62;&#60;/a&#62;&#60;/li&#62;&#10;               &#60;li&#62;&#60;a href=&#34;#&#34;&#62;&#60;img src=&#34;images/4.jpg&#34; /&#62;&#60;/a&#62;&#60;/li&#62;&#10;        &#60;/ul&#62;&#10;&#60;/div&#62;</span><br></pre></td></tr></table></figure>
+<h6 id="2、样式">2、样式</h6><p>给div 进行相对定位，相应的宽度，高度，超出部分影藏；ul进行决定定位，上边距，左边距为0；li进行浮动;<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">body,ul,li&#123;&#10;    margin:0;&#10;    padding:0;&#10;&#125;&#10;ul,li&#123;&#10;    list-style:none;&#10;&#125;&#10;#scroll&#123;&#10;    width:800px;&#10;    height:108px;&#10;    margin:200px auto 0;&#10;    overflow:hidden;&#10;    position:relative;&#10;&#125;&#10;#scroll ul&#123;&#10;    left:0;&#10;    top:0;&#10;    position:absolute;&#10;&#125;&#10;#scroll ul li&#123;&#10;    float:left;&#10;    width:178px;&#10;    height:108px;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<h6 id="3、动态效果">3、动态效果</h6><p>1，获取ul和li,2,设置两个ul元素：oUl.innerHTML+=oUl.innerHTML;3,获取ul的宽度，ul的宽度取决于所有Li的和；4、想要整个ul进行无缝滚动，设置一个定时器，向左移动，ul的离左边的距离等于ul左边距-5（因为向左，所以是负值）；5、设置两个ul元素是避免出现空白边，当ul左边距大于整个ul宽度的一半时，ul的左边距离为0；<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.onload=function()&#123;&#10;    var oScroll=document.getElementById(&#34;scroll&#34;);&#10;    var oUl=oScroll.getElementsByTagName(&#34;ul&#34;)[0];&#10;    var aLi=oUl.getElementsByTagName(&#34;li&#34;);&#10;&#10;    //&#35774;&#32622;&#20004;&#20010;ul&#30340;&#23485;&#24230;&#10;    oUl.innerHTML+=oUl.innerHTML;&#10;    //ul&#22810;&#23485;&#65292;&#26159;&#25152;&#26377;li&#30340;&#24635;&#21644;&#10;    oUl.style.width=aLi[0].offsetWidth*aLi.length+&#39;px&#39;;&#10;    //&#35774;&#32622;&#23450;&#26102;&#22120;&#10;    setInterval(function()&#123;&#10;        //&#21521;&#24038;&#31227;&#21160;&#30340;&#36895;&#24230;&#20026;5&#10;        oUl.style.left=oUl.offsetLeft-5+&#39;px&#39;;&#10;        //&#22914;&#26524;ul&#30340;&#38752;&#24038;&#30340;&#20559;&#31227;&#37327;&#23567;&#20110;&#25972;&#20010;ul&#30340;&#23485;&#24230;&#26102;&#65292;ul&#30340;&#24038;&#36793;&#36317;&#20026;0&#10;        if(oUl.offsetLeft&#60;-oUl.offsetWidth/2)&#123;&#10;            oUl.style.left=&#34;0px&#34;;&#10;        &#125;&#10;    &#125;,30);&#10;&#125;;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/08/10/无缝滚动/" data-id="cid746d62000bp0f8d816r8kk" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他技术/">其他技术</a></li></ul>
@@ -147,7 +193,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/07/10/Grunt实现Less实时编译,web服务器/" data-id="cid6o5lss0000vwf8yj0dufgl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/07/10/Grunt实现Less实时编译,web服务器/" data-id="cid746d4y0000p0f823rzbnmg" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他技术/">其他技术</a></li></ul>
@@ -193,7 +239,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/07/09/更换hexo主题/" data-id="cid6o5ltl0008vwf8vrwqoais" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/07/09/更换hexo主题/" data-id="cid746d5w0008p0f8bhrcml2d" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他技术/">其他技术</a></li></ul>
@@ -260,7 +306,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/07/09/github上使用hexo创建个人blog/" data-id="cid6o5ltp000bvwf85ta3it6h" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/07/09/github上使用hexo创建个人blog/" data-id="cid746d67000ep0f8er47itni" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他技术/">其他技术</a></li></ul>
@@ -281,7 +327,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/其他技术/">其他技术</a><span class="category-list-count">4</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/其他技术/">其他技术</a><span class="category-list-count">5</span></li></ul>
     </div>
   </div>
 
@@ -290,7 +336,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他技术/">其他技术</a><span class="tag-list-count">4</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他技术/">其他技术</a><span class="tag-list-count">5</span></li></ul>
     </div>
   </div>
 
@@ -308,7 +354,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -321,6 +367,10 @@
         
           <li>
             <a href="/2015/08/10/移动端图片轮播实现/">移动端图片轮播实现</a>
+          </li>
+        
+          <li>
+            <a href="/2015/08/10/无缝滚动/">无缝滚动</a>
           </li>
         
           <li>
