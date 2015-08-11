@@ -61,6 +61,52 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-移动端图片轮播实现" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/08/10/移动端图片轮播实现/" class="article-date">
+  <time datetime="2015-08-10T10:03:22.000Z" itemprop="datePublished">2015-08-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/其他技术/">其他技术</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/10/移动端图片轮播实现/">移动端图片轮播实现</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="移动端图片轮播实现">移动端图片轮播实现</h3><hr>
+<h6 id="1、界面布局">1、界面布局</h6><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;section  id=&#34;tabPic&#34;&#62;&#10;         &#60;ul id=&#34;picList&#34;&#62;&#10;                &#60;li&#62;&#60;img src=&#34;image/1.jpg&#34;&#62;&#60;/li&#62;&#10;                &#60;li&#62;&#60;img src=&#34;image/2.jpg&#34;&#62;&#60;/li&#62;&#10;                &#60;li&#62;&#60;img src=&#34;image/3.jpg&#34;&#62;&#60;/li&#62;&#10;                &#60;li&#62;&#60;img src=&#34;image/4.jpg&#34;&#62;&#60;/li&#62;&#10;                &#60;li&#62;&#60;img src=&#34;image/5.jpg&#34;&#62;&#60;/li&#62;&#10;                &#60;li&#62;&#60;img src=&#34;image/2.jpg&#34;&#62;&#60;/li&#62;&#10;         &#60;/ul&#62;&#10;&#60;/section&#62;</span><br></pre></td></tr></table></figure>
+<h6 id="2、样式">2、样式</h6><p>整个section给一个相对定位，设置ul的宽度为总共li的个数乘以100%,如有5个Li,width:500%;li的宽度为100%除以li的个数，如有5个li,li的宽度为20%；<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">body,ul,li,img&#123;&#10;       margin:0;&#10;       padding:0;&#10;&#125;&#10;ul li&#123;&#10;       list-style:none;&#10;&#125;&#10;#tabPic&#123;&#10;      position:relative;&#10;      overflow:hidden;&#10;&#125;&#10;#picList&#123;&#10;      overflow:hidden;&#10;      transition-duration:0.5s;&#10;&#125;&#10;#picList li&#123;&#10;      float:left;&#10;&#125;&#10;#picList li img&#123;&#10;      width:100%;&#10;      height:216px;&#10;      overflow:hidden;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<h6 id="3、js动态效果">3、js动态效果</h6><p>1、首先获取li的个数，通过id，class获取，li.length;2、获取可视区的宽度；3、获取图片当前的位置，初始位置模上li的个数，依次累加；4、自动轮播距离，通过CSS3中的translateX来改变x轴距离；<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.onload=function()&#123;&#10;      //&#33719;&#21462;&#22270;&#29255;&#30340;&#20010;&#25968;&#10;      var oList=document.getElementById(&#34;picList&#34;);&#10;      var aList= oList.getElementsByTagName(&#34;li&#34;);&#10;      //&#33719;&#21462;UL&#21644;LI&#30340;&#23485;&#24230;&#10;      var wUl=aList.length*100+%;&#10;      var wLi=100/(aList.length)+&#34;%&#34;;&#10;      //&#33719;&#21462;&#21487;&#35270;&#21306;&#30340;&#23485;&#24230;&#10;     var sWidth=document.documentElement.clientWidth;&#10;     //&#35774;&#32622;&#24403;&#21069;&#22270;&#29255;&#20301;&#32622;&#10;     var iNow=0;&#10;     //&#35774;&#32622;&#31227;&#21160;&#21518;translateX&#20540;&#10;     var iX=0;&#10;     var oTimer=0;&#10;     //&#33258;&#21160;&#36718;&#25773;&#10;     oTimer=setInterval(function()&#123;&#10;             // &#22270;&#29255;&#20010;&#25968;&#32047;&#21152;&#10;             iNow++;&#10;            //&#22270;&#29255;&#24403;&#21069;&#20301;&#32622;&#10;            iNow=iNow%aList.length;&#10;            //&#31227;&#21160;&#21518;translateX&#20540;&#10;            iX=-iNow*sWidth;&#10;            //&#21160;&#24577;&#33719;&#21462;ul&#30340;&#23485;&#24230;&#10;            oList.style.width=wUl;&#10;            //&#21160;&#24577;&#33719;&#21462;li&#30340;&#23485;&#24230;&#10;           for(var i=0;i&#60;aList.length;i++)&#123;&#10;                  aList[i].style.width= wLi;&#10;            &#125;&#10;            //&#27599;&#38548;0.5sUL&#20999;&#25442;&#19968;&#19979;&#10;            oList.style.transition=&#34;0.5s&#34;;&#10;            //&#33258;&#21160;&#36718;&#25773;&#30340;&#36317;&#31163;&#10;            oList.style.WebkitTransform=oList.style.transform=&#34;translateX(&#34;+iX+&#34;px)&#34;;&#10;     &#125;,2000);&#10;    &#10;&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/08/10/移动端图片轮播实现/" data-id="cid6nmyvd0005vcf87z3dos7x" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他技术/">其他技术</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Grunt实现Less实时编译,web服务器" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/07/10/Grunt实现Less实时编译,web服务器/" class="article-date">
@@ -101,7 +147,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/07/10/Grunt实现Less实时编译,web服务器/" data-id="cibxbz38d0000swf8su97w8y8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/07/10/Grunt实现Less实时编译,web服务器/" data-id="cid6nmyup0000vcf8lv0kg3cf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他技术/">其他技术</a></li></ul>
@@ -147,7 +193,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/07/09/更换hexo主题/" data-id="cibxbz3920005swf8y7g6ub3d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/07/09/更换hexo主题/" data-id="cid6nmyvi0008vcf8lv4t5t2r" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他技术/">其他技术</a></li></ul>
@@ -214,7 +260,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/07/09/github上使用hexo创建个人blog/" data-id="cibxbz3960008swf8mkopi59i" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/07/09/github上使用hexo创建个人blog/" data-id="cid6nmyvn000bvcf8jrkgw563" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他技术/">其他技术</a></li></ul>
@@ -235,7 +281,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/其他技术/">其他技术</a><span class="category-list-count">3</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/其他技术/">其他技术</a><span class="category-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -244,7 +290,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他技术/">其他技术</a><span class="tag-list-count">3</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他技术/">其他技术</a><span class="tag-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -262,7 +308,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -272,6 +318,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/08/10/移动端图片轮播实现/">移动端图片轮播实现</a>
+          </li>
         
           <li>
             <a href="/2015/07/10/Grunt实现Less实时编译,web服务器/">Grunt实现Less实时编译,web服务器</a>
